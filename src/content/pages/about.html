@@ -1,11 +1,11 @@
 ---
-title: "About | Code Stitch Web Designs"
-description: "Meta description for the page"
-preloadImg: "/assets/images/cabinets2.jpg"
-permalink: "about/"
+title: 'About Us | Oconee CPA'
+description: 'Learn more about our accounting firm and our commitment to your financial success'
+preloadImg: '/assets/images/about.webp'
+permalink: '/about/'
 eleventyNavigation:
     key: About Us
-    order: 200
+    order: 300
 ---
 
 {% extends "layouts/base.html" %}
@@ -34,7 +34,7 @@ eleventyNavigation:
                 aria-hidden="true"
                 decoding="async"
                 src="/assets/images/cabinets2.jpg"
-                alt="kitchen cabinets"
+                alt="Professional accounting services"
                 loading="eager"
                 width="2500"
                 height="1667"
@@ -46,86 +46,122 @@ eleventyNavigation:
     <!--                 Side By Side                 -->
     <!-- ============================================ -->
 
-    <section id="sbs">
+    <section id="RTsbs-1311">
         <div class="cs-container">
             <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source
-                        media="(max-width: 600px)"
-                        srcset="/assets/images/cabinets2-m.jpg"
-                    />
-                    <source
-                        media="(min-width: 601px)"
-                        srcset="/assets/images/cabinets2.jpg"
-                    />
-                    <img
-                        aria-hidden="true"
-                        decoding="async"
-                        src="/assets/images/cabinets2.jpg"
-                        alt="cabinets"
-                        loading="lazy"
-                        width="400"
-                        height="563"
-                    />
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source
-                        media="(max-width: 600px)"
-                        srcset="/assets/images/construction-m.jpg"
-                    />
-                    <source
-                        media="(min-width: 601px)"
-                        srcset="/assets/images/construction.jpg"
-                    />
-                    <img
-                        aria-hidden="true"
-                        decoding="async"
-                        src="/assets/images/construction.jpg"
-                        alt="house"
-                        loading="lazy"
-                        width="400"
-                        height="563"
-                    />
+            <div class="cs-image-group">
+                <!--Floating Box-->
+                <div class="cs-box">
+                    <span class="cs-desc">Professional Tax & Accounting Services</span>
+                </div>
+                <!--Image-->
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/Oconee1.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/Oconee1.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/Oconee1.jpg" alt="Oconee CPA office" width="630" height="630" aria-hidden="true">
                 </picture>
             </div>
             <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
+            <div class="cs-content">
+                <span class="cs-topper">About Our Firm</span>
+                <h2 class="cs-title">Your Strategic Financial Partner</h2>
                 <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent
-                    Class officelan nonatoureanor mauris laoreet, iaculis libero
-                    quis. Curabitur et tempus eri consequat tincidunt turpis sit
-                    amet imperdiet. Praesent nonatourean olei aptent taciti
-                    sociosqu ad litora torquent per.
+                    Oconee CPA, LLC, located in Watkinsville, Georgia, is a Certified Public Accounting firm offering comprehensive tax and accounting services to small businesses and individuals throughout the state and region.
                 </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent
-                    Class officelan nonatoureanor mauris laoreet, iaculis libero
-                    quis. Curabitur et tempus eri consequat tincidunt turpis sit
-                    amet imperdiet. Praesent nonatourean olei aptent taciti
-                    sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet.
-                        Praesent Classei consequat tincidunt turpis sit amet
-                        imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img
-                        class="cs-quote-icon"
-                        loading="lazy"
-                        decoding="async"
-                        src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-                        alt="gavel"
-                        width="136"
-                        height="77"
-                    />
+                <a class="cs-button-solid" aria-label="learn more about our services" href="/services">Our Services</a>
+                <ul class="cs-ul">
+                    <li class="cs-item">
+                        <span class="cs-number">16 +</span>
+                        <h3 class="cs-h3">Years of Experience</h3>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-number">500 +</span>
+                        <h3 class="cs-h3">Satisfied Clients</h3>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-number">100 %</span>
+                        <h3 class="cs-h3">Client Satisfaction</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Side By Side Reverse            -->
+    <!-- ============================================ -->
+
+    <section id="RTsbsr-1311">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-image-group">
+                <!--Floating Box-->
+                <div class="cs-box">
+                    <span class="cs-desc">Expert Business Advisory</span>
                 </div>
-                <a href="/projects" class="cs-button-solid">Our Projects</a>
+                <!--Image-->
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/advisory-services.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/advisory-services.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/advisory-services.jpg" alt="Business advisory services" width="630" height="630" aria-hidden="true">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-content">
+                <span class="cs-topper">Our Expertise</span>
+                <h2 class="cs-title">Real Estate & Business Focus</h2>
+                <p class="cs-text">
+                    Our practice advises across a variety of industries with focused interest and experience with real estate investment, development, and operating entities. Our goal is to be a strategic partner for our clients, providing the highest quality of service via thoroughness, transparency and responsiveness.
+                </p>
+                <p class="cs-text">
+                    We want to be an extension of our client's business. As such, we are committed to maintaining an intimate small-firm approach, allowing for a complete understanding of both our client's business and their personal financial situation.
+                </p>
+                <a class="cs-button-solid" aria-label="contact us" href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Side By Side Triplet            -->
+    <!-- ============================================ -->
+
+    <section id="RTsbst-1311">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-image-group">
+                <!--Floating Box-->
+                <div class="cs-box">
+                    <span class="cs-desc">Meet Our Leadership</span>
+                </div>
+                <!--Image-->
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/tax-services.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/tax-services.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/tax-services.jpg" alt="Chandler Amerson" width="630" height="630" aria-hidden="true">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-content">
+                <span class="cs-topper">Leadership</span>
+                <h2 class="cs-title">Meet Our Owner</h2>
+                <p class="cs-text">
+                    Oconee CPA is owned and operated by Chandler Amerson. Chandler is a Certified Public Accountant with over 16 years of public accounting, consulting and private industry experience. His knowledge across a variety of areas within small business finance affords a unique and practical perspective that goes beyond standard accounting services.
+                </p>
+                <a class="cs-button-solid" aria-label="learn more about our team" href="/contact">Get In Touch</a>
+                <ul class="cs-ul">
+                    <li class="cs-item">
+                        <span class="cs-number">CPA</span>
+                        <h3 class="cs-h3">Certified Public Accountant</h3>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-number">UGA</span>
+                        <h3 class="cs-h3">BBA in Real Estate</h3>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-number">MAcc</span>
+                        <h3 class="cs-h3">Master of Accountancy</h3>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>

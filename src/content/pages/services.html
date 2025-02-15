@@ -1,0 +1,127 @@
+---
+title: 'Services | Oconee CPA'
+description: 'Professional accounting and tax services for individuals and businesses'
+preloadImg: '/assets/images/services.webp'
+permalink: '/services/'
+eleventyNavigation:
+    key: Services
+    order: 200
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/services.css" />
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Our Services</h1>
+        <picture>
+            <source
+                media="(max-width: 600px)"
+                srcset="/assets/images/cabinets2-m.jpg"
+            />
+            <source
+                media="(min-width: 601px)"
+                srcset="/assets/images/cabinets2.jpg"
+            />
+            <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/images/cabinets2.jpg"
+                alt="Professional accounting services"
+                loading="eager"
+                width="2500"
+                height="1667"
+            />
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    Services                  -->
+    <!-- ============================================ -->
+
+    <section id="services-1338">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Core Services</span>
+                <h2 class="cs-title">Our Professional Services</h2>
+                <p class="cs-text">
+                    Oconee CPA provides a variety of services for small businesses and individuals, customized for each client's needs. Our expertise spans across tax compliance, financial accounting, payroll services, and business consulting, with specialized experience in real estate.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <a href="/services#tax" class="cs-link">
+                        <span class="cs-number">01</span>
+                        <picture class="cs-picture">
+                            <img decoding="async"
+                                src="/assets/images/portfolio/tax-services.jpg"
+                                alt="Tax Services" width="413" height="374" aria-hidden="true">
+                        </picture>
+                        <div class="cs-info">
+                            <h3 class="cs-h3">Tax Services</h3>
+                            <p class="cs-item-text">
+                                Comprehensive tax planning and preparation for businesses and individuals
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/services#accounting" class="cs-link">
+                        <span class="cs-number">02</span>
+                        <picture class="cs-picture">
+                            <img decoding="async"
+                                src="/assets/images/portfolio/accounting-services.jpg"
+                                alt="Accounting Services" width="413" height="374" aria-hidden="true">
+                        </picture>
+                        <div class="cs-info">
+                            <h3 class="cs-h3">Financial Accounting</h3>
+                            <p class="cs-item-text">
+                                Bookkeeping and financial statement preparation
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/services#payroll" class="cs-link">
+                        <span class="cs-number">03</span>
+                        <picture class="cs-picture">
+                            <img decoding="async"
+                                src="/assets/images/portfolio/payroll-services.jpg"
+                                alt="Payroll Services" width="413" height="374" aria-hidden="true">
+                        </picture>
+                        <div class="cs-info">
+                            <h3 class="cs-h3">Payroll Services</h3>
+                            <p class="cs-item-text">
+                                Complete payroll processing and tax compliance
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/services#advisory" class="cs-link">
+                        <span class="cs-number">04</span>
+                        <picture class="cs-picture">
+                            <img decoding="async"
+                                src="/assets/images/portfolio/advisory-services.jpg"
+                                alt="Advisory Services" width="413" height="374" aria-hidden="true">
+                        </picture>
+                        <div class="cs-info">
+                            <h3 class="cs-h3">Business Advisory</h3>
+                            <p class="cs-item-text">
+                                Strategic consulting and real estate expertise
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+{% endblock %} 
