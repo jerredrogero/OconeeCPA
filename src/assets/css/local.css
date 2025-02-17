@@ -635,6 +635,9 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
 }
+/*-- -------------------------- -->
+<---          Hero             -->
+<--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #hero {
@@ -722,59 +725,6 @@
     width: 100%;
     object-fit: cover;
   }
-  #core-services {
-    padding: var(--sectionPadding);
-    background-color: #f7f7f7;
-  }
-  #core-services .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    padding: 0 1rem;
-  }
-  #core-services .cs-topper {
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  #core-services .cs-title {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  #core-services .cs-card-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  #core-services .cs-item {
-    width: 100%;
-    max-width: 20rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  #core-services .cs-item:hover {
-    transform: translateY(-5px);
-  }
-  #core-services .cs-item picture {
-    display: block;
-    margin-bottom: 1rem;
-  }
-  #core-services .cs-item picture img {
-    width: 48px;
-    height: 48px;
-  }
-  #core-services .cs-item h3 {
-    margin-bottom: 1rem;
-    color: var(--headerColor);
-  }
-  #core-services .cs-item p {
-    color: var(--bodyTextColor);
-    line-height: 1.5;
-  }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
@@ -817,257 +767,23 @@
 }
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #cs-navigation:not(.home-nav) {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10000;
-    background-color: transparent;
-    box-shadow: none;
+  #core-services {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
   }
-  #cs-navigation .cs-top-bar {
-    background-color: #fff;
-    padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
-    border-bottom: 1px solid #e8e8e8;
-  }
-  #cs-navigation .cs-top-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }
-  #cs-navigation .cs-logo {
-    width: auto;
-    max-width: 210px;
-    height: 29px;
-  }
-  #cs-navigation .cs-logo img {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  #cs-navigation .cs-logo .cs-logo-light {
-    display: block;
-  }
-  #cs-navigation .cs-logo .cs-logo-dark {
-    display: none;
-  }
-  #cs-navigation .cs-contact-group {
-    display: none;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  #cs-navigation .cs-contact-link {
-    text-decoration: none;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  #cs-navigation .cs-contact-link .cs-wrapper {
-    background-color: var(--primary);
-    padding: 0.5rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #cs-navigation .cs-contact-link .cs-info {
-    display: flex;
-    flex-direction: column;
-  }
-  #cs-navigation .cs-contact-link .cs-header {
-    font-size: 0.75rem;
-    color: var(--bodyTextColor);
-    line-height: 1.2em;
-  }
-  #cs-navigation .cs-contact-link .cs-link-content {
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: var(--headerColor);
-    line-height: 1.2em;
-  }
-  #cs-navigation .cs-bottom-bar {
-    padding: 0.5rem 1rem;
-  }
-  #cs-navigation .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #cs-navigation .cs-toggle {
-    width: 3.5rem;
-    height: 2.5rem;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #cs-navigation .cs-toggle .cs-box {
-    width: 24px;
-    height: 18px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #cs-navigation .cs-toggle .cs-line {
-    width: 100%;
-    height: 2px;
-    background-color: var(--headerColor);
-    transition: transform 0.3s;
-  }
-  #cs-navigation .cs-ul {
-    padding: 2rem 0;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    height: 100vh;
-    overflow: scroll;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-  #cs-navigation .cs-ul[aria-expanded=true] {
-    display: flex;
-  }
-  #cs-navigation .cs-li {
-    width: 100%;
-    padding: 0 1rem;
-    list-style: none;
-  }
-  #cs-navigation .cs-li-link {
-    text-decoration: none;
-    font-size: 1.125rem;
-    line-height: 1.2em;
-    color: var(--headerColor);
-    display: block;
-  }
-  #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
-  }
-  #cs-navigation .cs-call {
-    text-decoration: none;
-    display: none;
-    gap: 0.5rem;
-    align-items: center;
-  }
-  #cs-navigation .cs-call .cs-wrapper {
-    background-color: var(--primary);
-    padding: 0.5rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #cs-navigation .cs-call .cs-info {
-    display: flex;
-    flex-direction: column;
-  }
-  #cs-navigation .cs-call .cs-header {
-    font-size: 0.75rem;
-    color: var(--bodyTextColor);
-    line-height: 1.2em;
-  }
-  #cs-navigation .cs-call .cs-link-content {
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: var(--headerColor);
-    line-height: 1.2em;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #cs-navigation .cs-contact-group {
-    display: flex;
-  }
-  #cs-navigation .cs-toggle {
-    display: none;
-  }
-  #cs-navigation .cs-ul {
-    background-color: transparent;
-    box-shadow: none;
-    height: auto;
-    overflow: visible;
-    position: static;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 2rem;
-    padding: 0;
-  }
-  #cs-navigation .cs-li {
-    width: auto;
-    padding: 0;
-  }
-  #cs-navigation .cs-call {
-    display: flex;
+  #certifications {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #cs-navigation {
+  body.dark-mode #core-services {
     background-color: var(--dark);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
   }
-  body.dark-mode #cs-navigation .cs-top-bar {
-    background-color: var(--dark) !important;
-    border-bottom: 1px solid var(--medium);
-  }
-  body.dark-mode #cs-navigation .cs-logo .cs-logo-light {
-    display: none;
-  }
-  body.dark-mode #cs-navigation .cs-logo .cs-logo-dark {
-    display: block;
-  }
-  body.dark-mode #cs-navigation .cs-contact-link .cs-wrapper {
-    background-color: var(--primaryDark);
-  }
-  body.dark-mode #cs-navigation .cs-contact-link .cs-header {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-contact-link .cs-link-content {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-toggle .cs-line {
-    background-color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-ul {
+  body.dark-mode #certifications {
     background-color: var(--dark);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
   }
-  body.dark-mode #cs-navigation .cs-li-link {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-li-link.cs-active {
-    color: var(--primaryLight);
-  }
-  body.dark-mode #cs-navigation .cs-call .cs-wrapper {
-    background-color: var(--primaryDark);
-  }
-  body.dark-mode #cs-navigation .cs-call .cs-header {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-call .cs-link-content {
-    color: var(--bodyTextColorWhite);
-  }
-}
-
-#cs-navigation.home-nav {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=local.css.map */
