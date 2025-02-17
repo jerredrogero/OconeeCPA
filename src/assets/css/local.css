@@ -771,15 +771,107 @@
     padding: var(--sectionPadding);
     background-color: #f7f7f7;
   }
+  #core-services .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  #core-services .cs-topper {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  #core-services .cs-title {
+    text-align: center;
+    max-width: 31.25rem;
+    margin: 0 auto 2.5rem;
+  }
+  #core-services .cs-card-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #core-services .cs-item {
+    text-align: center;
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  #core-services .cs-item picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+  }
+  #core-services .cs-item picture img {
+    width: 2rem;
+    height: 2rem;
+    filter: brightness(0) invert(1);
+  }
+  #core-services .cs-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--headerColor);
+  }
+  #core-services .cs-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--bodyTextColor);
+  }
   #certifications {
     padding: var(--sectionPadding);
     background-color: #f7f7f7;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #core-services .cs-card-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  #core-services .cs-item {
+    flex: 0 1 calc(50% - 2rem);
+    margin: 0;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #core-services .cs-item {
+    flex: 0 1 calc(33.333% - 2rem);
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #core-services {
     background-color: var(--dark);
+  }
+  body.dark-mode #core-services .cs-item {
+    background-color: var(--medium);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #core-services .cs-item h3 {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #core-services .cs-item p {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #core-services .cs-item picture {
+    background-color: var(--secondary);
   }
   body.dark-mode #certifications {
     background-color: var(--dark);

@@ -946,13 +946,106 @@
     #core-services {
         padding: var(--sectionPadding);
         background-color: #f7f7f7;
-        // ... rest of core-services styles ...
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(40 / 16 * 1rem);
+        }
+
+        .cs-topper {
+            text-align: center;
+            margin-bottom: calc(16 / 16 * 1rem);
+        }
+
+        .cs-title {
+            text-align: center;
+            max-width: calc(500 / 16 * 1rem);
+            margin: 0 auto calc(40 / 16 * 1rem);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: calc(24 / 16 * 1rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            width: 100%;
+            max-width: calc(384 / 16 * 1rem);
+            margin: 0 auto;
+            padding: calc(32 / 16 * 1rem);
+            background-color: #fff;
+            border-radius: calc(4 / 16 * 1rem);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+
+            picture {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: calc(64 / 16 * 1rem);
+                height: calc(64 / 16 * 1rem);
+                margin: 0 auto calc(24 / 16 * 1rem);
+                border-radius: 50%;
+                background-color: var(--primary);
+
+                img {
+                    width: calc(32 / 16 * 1rem);
+                    height: calc(32 / 16 * 1rem);
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            h3 {
+                font-size: calc(24 / 16 * 1rem);
+                font-weight: 700;
+                margin-bottom: calc(16 / 16 * 1rem);
+                color: var(--headerColor);
+            }
+
+            p {
+                font-size: calc(16 / 16 * 1rem);
+                line-height: 1.5;
+                color: var(--bodyTextColor);
+            }
+        }
     }
 
     #certifications {
         padding: var(--sectionPadding);
         background-color: #f7f7f7;
-        // ... rest of certifications styles ...
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #core-services {
+        .cs-card-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: calc(32 / 16 * 1rem);
+        }
+
+        .cs-item {
+            flex: 0 1 calc(50% - calc(32 / 16 * 1rem));
+            margin: 0;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #core-services {
+        .cs-item {
+            flex: 0 1 calc(33.333% - calc(32 / 16 * 1rem));
+        }
     }
 }
 
@@ -961,12 +1054,27 @@
     body.dark-mode {
         #core-services {
             background-color: var(--dark);
-            // ... rest of dark mode styles ...
+
+            .cs-item {
+                background-color: var(--medium);
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+                h3 {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                p {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                picture {
+                    background-color: var(--secondary);
+                }
+            }
         }
 
         #certifications {
             background-color: var(--dark);
-            // ... rest of dark mode styles ...
         }
     }
 }

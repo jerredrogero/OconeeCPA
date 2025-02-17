@@ -110,6 +110,28 @@
     .cs-hide-on-mobile {
         display: none;
     }
+
+    /* Footer Credit Styles */
+    #footer {
+        .credit {
+            padding: 1rem;
+            text-align: center;
+            
+            span {
+                color: #fff;
+            }
+            
+            a {
+                color: var(--secondary) !important;
+                text-decoration: none;
+                transition: text-decoration 0.3s;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 /* Desktop - 1024px */
@@ -1662,7 +1684,7 @@
             a {
                 text-decoration: none;
                 font-size: calc(16 / 16 * 1rem);
-                color: var(--primary);
+                color: var(--secondary) !important;
 
                 &:hover {
                     text-decoration: underline;

@@ -92,6 +92,22 @@
   .cs-hide-on-mobile {
     display: none;
   }
+  /* Footer Credit Styles */
+  #footer .credit {
+    padding: 1rem;
+    text-align: center;
+  }
+  #footer .credit span {
+    color: #fff;
+  }
+  #footer .credit a {
+    color: var(--secondary) !important;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+  }
+  #footer .credit a:hover {
+    text-decoration: underline;
+  }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
@@ -1367,7 +1383,7 @@
   #footer .credit a {
     text-decoration: none;
     font-size: 1rem;
-    color: var(--primary);
+    color: var(--secondary) !important;
   }
   #footer .credit a:hover {
     text-decoration: underline;

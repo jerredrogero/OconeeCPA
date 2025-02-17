@@ -97,6 +97,7 @@
             grid-column: span 12;
             position: relative;
             z-index: 1;
+            cursor: default;
 
             &:hover {
                 .cs-picture {
@@ -124,19 +125,6 @@
                     top: clamp(1.25rem, 2.3vw, 2rem);
                 }
             }
-        }
-
-        .cs-link {
-            text-decoration: none;
-            width: 100%;
-            height: 100%;
-            padding-bottom: 0;
-            /* we use flexbox here to grow the link to fit the whole item, making it clickable everywhere, no matter the size */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            position: relative;
-            z-index: 1;
 
             &::after {
                 /* hover overlay */
