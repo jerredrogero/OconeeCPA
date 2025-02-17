@@ -877,7 +877,7 @@
 
             /* Top Bar Styles */
             .cs-top-bar {
-                background-color: var(--primary) !important;
+                background-color: var(--dark) !important;
                 border-bottom: 1px solid var(--medium);
 
                 .cs-contact-link {
@@ -953,12 +953,9 @@
 
             /* Logo Styles */
             .cs-logo {
-                .cs-logo-light {
-                    display: none;
-                }
-                .cs-logo-dark {
-                    display: block;
-                }
+                filter: none;
+                .cs-logo-light { display: none; }
+                .cs-logo-dark { display: block; }
             }
         }
     }

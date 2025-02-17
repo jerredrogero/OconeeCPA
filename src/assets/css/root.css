@@ -705,7 +705,7 @@
     /* Logo Styles */
   }
   body.dark-mode #cs-navigation .cs-top-bar {
-    background-color: var(--primary) !important;
+    background-color: var(--dark) !important;
     border-bottom: 1px solid var(--medium);
   }
   body.dark-mode #cs-navigation .cs-top-bar .cs-contact-link .cs-wrapper {
@@ -752,6 +752,9 @@
   body.dark-mode #cs-navigation .cs-ul-wrapper {
     background-color: var(--dark);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
+  }
+  body.dark-mode #cs-navigation .cs-logo {
+    filter: none;
   }
   body.dark-mode #cs-navigation .cs-logo .cs-logo-light {
     display: none;
