@@ -115,8 +115,49 @@
     /* 60px - 136px */
     width: clamp(3.75rem, 10vw, 8.5rem);
   }
+  #sbs .cs-button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
   #sbs .cs-button-solid {
-    margin-top: 2rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 0 2rem;
+    line-height: 3.125em;
+    height: 3.125rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--secondary);
+    display: inline-block;
+  }
+  #sbs .cs-button-solid:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  #sbs .cs-button-transparent {
+    color: var(--bodyTextColorWhite);
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--bodyTextColorWhite);
+    border-radius: 0.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    line-height: 1;
+  }
+  #sbs .cs-button-transparent:hover {
+    background-color: var(--bodyTextColorWhite);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 }
 /* Desktop - 1024px */
@@ -670,33 +711,52 @@
   #hero .cs-button-group {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+  #hero .cs-button-solid,
+  #hero .cs-button-transparent {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
   }
   #hero .cs-button-solid {
     background-color: var(--secondary);
     color: var(--primary);
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     border-radius: 0.25rem;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 2px solid var(--secondary);
+    display: inline-block;
+    line-height: 3.125em;
+    height: 3.125rem;
   }
   #hero .cs-button-solid:hover {
-    background-color: var(--secondaryLight);
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   #hero .cs-button-transparent {
     color: var(--bodyTextColorWhite);
-    padding: 1rem 2rem;
     border: 2px solid var(--bodyTextColorWhite);
-    border-radius: 0.25rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    background-color: transparent;
   }
   #hero .cs-button-transparent:hover {
-    background-color: var(--bodyTextColorWhite);
-    color: var(--primary);
+    background-color: transparent;
+    color: var(--bodyTextColorWhite);
+    border-color: var(--bodyTextColorWhite);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   #hero .cs-picture {
     position: absolute;
@@ -742,10 +802,13 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode #hero .cs-button-solid {
     background-color: var(--secondary);
-    color: var(--primary);
+    color: var(--dark);
+    border-color: var(--secondary);
   }
   body.dark-mode #hero .cs-button-solid:hover {
-    background-color: var(--secondaryLight);
+    background-color: var(--dark);
+    color: var(--secondary);
+    border-color: var(--secondary);
   }
   body.dark-mode #core-services {
     background-color: var(--dark);
@@ -804,6 +867,20 @@
     background-color: #fff;
     border-radius: 0.25rem;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  #core-services .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+  }
+  #core-services .cs-item:hover picture {
+    transform: scale(1.1);
+    background-color: var(--secondary);
+  }
+  #core-services .cs-item:hover h3 {
+    color: var(--primary);
   }
   #core-services .cs-item picture {
     display: flex;
@@ -814,22 +891,7 @@
     margin: 0 auto 1.5rem;
     border-radius: 50%;
     background-color: var(--primary);
-  }
-  #core-services .cs-item picture img {
-    width: 2rem;
-    height: 2rem;
-    filter: brightness(0) invert(1);
-  }
-  #core-services .cs-item h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--headerColor);
-  }
-  #core-services .cs-item p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--bodyTextColor);
+    transition: all 0.3s ease;
   }
   #certifications {
     padding: var(--sectionPadding);

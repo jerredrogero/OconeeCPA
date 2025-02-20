@@ -174,7 +174,7 @@
     font-weight: 700;
     text-align: center;
     margin: 0;
-    color: #1a1a1a;
+    color: var(--bodyTextColorWhite);
     min-width: 9.375rem;
     padding: 0 1.5rem;
     background-color: var(--primary);
@@ -191,7 +191,7 @@
     position: absolute;
     height: 100%;
     width: 0%;
-    background: #000;
+    background: var(--secondary);
     opacity: 1;
     top: 0;
     left: 0;
@@ -201,7 +201,7 @@
   #RTsbs-1311 .cs-button-solid:hover,
   #RTsbsr-1311 .cs-button-solid:hover,
   #RTsbst-1311 .cs-button-solid:hover {
-    color: #fff;
+    color: var(--primary);
   }
   #RTsbs-1311 .cs-button-solid:hover:before,
   #RTsbsr-1311 .cs-button-solid:hover:before,
@@ -509,8 +509,8 @@
   body.dark-mode #RTsbs-1311 .cs-button-solid,
   body.dark-mode #RTsbsr-1311 .cs-button-solid,
   body.dark-mode #RTsbst-1311 .cs-button-solid {
-    color: var(--dark);
-    background-color: var(--primaryLight);
+    color: var(--secondary);
+    background-color: var(--dark);
   }
   body.dark-mode #RTsbs-1311 .cs-button-solid:hover,
   body.dark-mode #RTsbsr-1311 .cs-button-solid:hover,

@@ -11,7 +11,7 @@
         --primary: #001f3f;  // Navy
         --primaryLight: #FFD700;  // Lighter navy for hover states
         --secondary: #FFD700;  // Gold
-        --secondaryLight: #FFE55C;  // Lighter gold for hover states
+        --secondaryLight: #FFD700;  // Lighter gold for hover states
         --headerColor: #001f3f;  // Navy for headers
         --bodyTextColor: #4e4b66;  // Keeping original for body text
         --bodyTextColorWhite: #fafbfc;  // Keeping original white text
@@ -65,45 +65,28 @@
 
     // Button - can be replaced using CodeStitch's "Button" Stitches
     .cs-button-solid {
-        z-index: 1;
-        position: relative;
-        display: inline-block;
-        background-color: var(--primary);
-        width: auto;
-        padding: 0 calc(30 / 16 * 1rem);
+        font-size: 1rem;
+        line-height: 3.125em;
         text-decoration: none;
-        text-transform: uppercase;
-        font-size: calc(16 / 16 * 1rem);
-        line-height: calc(50 / 16 * 1em);
-        font-weight: bold;
-
-        // Transition Properties
-        color: #000;
-        transition: color 0.3s;
-        transition-delay: 0.1s;
+        font-weight: 700;
         text-align: center;
+        margin: 0;
+        color: var(--primary);
+        min-width: 9.375rem;
+        padding: 0 1.875rem;
+        background-color: var(--secondary);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        border: none;
+        transition: none;
 
         &:hover {
-            color: #fff;
-            &:before {
-                width: 100%;
-            }
-        }
-
-        &:before {
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: "";
-            opacity: 1;
-            display: block;
-            background-color: #000;
-            height: 100%;
-
-            //Transition properties
-            width: 0;
-            transition: width 0.3s;
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: none;
+            box-shadow: none;
         }
     }
 
@@ -587,8 +570,21 @@
         .cs-button-solid {
             background-color: var(--secondary);
             color: var(--primary);
+            padding: calc(4 / 16 * 1rem) calc(16 / 16 * 1rem);
+            border-radius: calc(4 / 16 * 1rem);
+            font-weight: bold;
+            font-size: calc(14 / 16 * 1rem);
+            line-height: 3.125em;
+            text-decoration: none;
+            display: inline-block;
+            height: 3.125rem;
+            transition: none;
+
             &:hover {
-                color: var(--bodyTextColorWhite);
+                background-color: var(--secondary);
+                color: var(--primary);
+                transform: none;
+                box-shadow: none;
             }
         }
 
@@ -859,31 +855,37 @@
         }
 
         .cs-li-link {
-            &.cs-drop-link {
+            position: relative;
+            text-decoration: none;
+            color: var(--bodyTextColor);
+            transition: color 0.3s;
+
+            &:before {
+                position: absolute;
+                bottom: calc(-3 / 16 * 1rem);
+                left: 0;
+                content: "";
+                opacity: 1;
                 display: block;
-                width: 100%;
-                box-sizing: border-box;
-                padding: calc(12 / 16 * 1rem);
-                white-space: nowrap;
-                text-decoration: none;
-                font-size: calc(16 / 16 * 1rem);
-                line-height: 1.5em;
-                color: var(--bodyTextColor);
-                transition:
-                    color 0.3s,
-                    background-color 0.3s;
+                background: var(--secondary);
+                height: calc(2 / 16 * 1rem);
+                width: 0%;
+                transition: width 0.3s;
+            }
 
-                &:hover {
-                    background-color: #f7f7f7;
-                }
-
-                &:focus-visible {
-                    outline: 2px solid currentColor;
-                    outline-offset: -4px;
-                }
-
+            &:hover {
+                color: var(--secondary);
+                
                 &:before {
-                    display: none;
+                    width: 100%;
+                }
+            }
+
+            &.cs-active {
+                color: var(--secondary);
+                
+                &:before {
+                    width: 100%;
                 }
             }
         }
@@ -895,8 +897,8 @@
     body.dark-mode {
         #cs-navigation {
             background-color: var(--dark);
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
 
-            /* Top Bar Styles */
             .cs-top-bar {
                 background-color: var(--primary);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -904,6 +906,10 @@
                 .cs-contact-link {
                     .cs-wrapper {
                         background-color: var(--secondary);
+                        
+                        .cs-icon {
+                            filter: brightness(0) saturate(100%) invert(11%) sepia(28%) saturate(5674%) hue-rotate(201deg) brightness(95%) contrast(101%);
+                        }
                     }
 
                     .cs-header {
@@ -914,18 +920,8 @@
                         color: var(--bodyTextColorWhite);
                     }
                 }
-
-                .cs-button-solid {
-                    background-color: var(--secondary);
-                    color: var(--primary);
-
-                    &:hover {
-                        background-color: var(--secondaryLight);
-                    }
-                }
             }
 
-            /* Bottom Bar Styles */
             .cs-bottom-bar {
                 background-color: var(--dark);
                 box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
@@ -947,10 +943,10 @@
 
                 .cs-call {
                     .cs-wrapper {
-                        background-color: var(--primary);
-
+                        background-color: var(--secondary);
+                        
                         .cs-icon {
-                            filter: brightness(0) invert(1);
+                            filter: brightness(0) saturate(100%) invert(11%) sepia(28%) saturate(5674%) hue-rotate(201deg) brightness(95%) contrast(101%);
                         }
                     }
 
@@ -964,23 +960,13 @@
                 }
             }
 
-            /* Mobile Menu Styles */
-            .cs-toggle {
-                .cs-line {
-                    background-color: var(--bodyTextColorWhite);
-                }
-            }
-
-            .cs-ul-wrapper {
-                background-color: var(--dark);
-                box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
-            }
-
-            /* Logo Styles */
             .cs-logo {
-                filter: none;
-                .cs-logo-light { display: none; }
-                .cs-logo-dark { display: block; }
+                .cs-logo-dark {
+                    display: block;
+                }
+                .cs-logo-light {
+                    display: none;
+                }
             }
         }
     }
@@ -1023,7 +1009,7 @@
                         width: 16px;
                         height: 16px;
                         object-fit: contain;
-                        filter: sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(100%);
+                        filter: brightness(0) invert(1);
                     }
                 }
 
@@ -1094,7 +1080,7 @@
                     width: 16px;
                     height: 16px;
                     object-fit: contain;
-                    filter: sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(100%);
+                    filter: brightness(0) invert(1);
                 }
             }
 
@@ -1118,13 +1104,21 @@
         .cs-button-solid {
             background-color: var(--secondary);
             color: var(--primary);
-            padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
+            padding: calc(4 / 16 * 1rem) calc(16 / 16 * 1rem);
             border-radius: calc(4 / 16 * 1rem);
             font-weight: bold;
             font-size: calc(14 / 16 * 1rem);
+            line-height: 3.125em;
+            text-decoration: none;
+            display: inline-block;
+            height: 3.125rem;
+            transition: none;
 
             &:hover {
-                background-color: var(--secondaryLight);
+                background-color: var(--secondary);
+                color: var(--primary);
+                transform: none;
+                box-shadow: none;
             }
         }
 
@@ -1176,16 +1170,36 @@
         .cs-li-link {
             position: relative;
             text-decoration: none;
-            font-size: calc(16 / 16 * 1rem);
             color: var(--bodyTextColor);
-            font-weight: 500;
+            transition: color 0.3s;
+
+            &:before {
+                position: absolute;
+                bottom: calc(-3 / 16 * 1rem);
+                left: 0;
+                content: "";
+                opacity: 1;
+                display: block;
+                background: var(--secondary);
+                height: calc(2 / 16 * 1rem);
+                width: 0%;
+                transition: width 0.3s;
+            }
 
             &:hover {
-                color: var(--primary);
+                color: var(--secondary);
+                
+                &:before {
+                    width: 100%;
+                }
             }
 
             &.cs-active {
-                color: var(--primary);
+                color: var(--secondary);
+                
+                &:before {
+                    width: 100%;
+                }
             }
         }
 
@@ -1208,7 +1222,7 @@
                     width: 16px;
                     height: 16px;
                     object-fit: contain;
-                    filter: sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(100%);
+                    filter: brightness(0) invert(1);
                 }
             }
 
@@ -1227,88 +1241,6 @@
                 font-size: calc(14 / 16 * 1rem);
                 color: var(--primary);
                 font-weight: bold;
-            }
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #cs-navigation {
-            /* Top Bar Dark Mode */
-            .cs-top-bar {
-                background-color: var(--primary);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-                .cs-contact-link {
-                    .cs-wrapper {
-                        background-color: var(--secondary);
-                    }
-
-                    .cs-header {
-                        color: var(--bodyTextColorWhite);
-                    }
-
-                    .cs-link-content {
-                        color: var(--bodyTextColorWhite);
-                    }
-                }
-
-                .cs-button-solid {
-                    background-color: var(--secondary);
-                    color: var(--primary);
-
-                    &:hover {
-                        background-color: var(--secondaryLight);
-                    }
-                }
-            }
-
-            /* Bottom Bar Dark Mode */
-            .cs-bottom-bar {
-                background-color: var(--dark);
-                box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
-
-                .cs-nav {
-                    .cs-ul {
-                        background-color: var(--dark);
-                    }
-
-                    .cs-li-link {
-                        color: var(--bodyTextColorWhite);
-
-                        &:hover,
-                        &.cs-active {
-                            color: var(--secondary);
-                        }
-                    }
-                }
-
-                .cs-call {
-                    .cs-wrapper {
-                        background-color: var(--primary);
-
-                        .cs-icon {
-                            filter: brightness(0) invert(1);
-                        }
-                    }
-
-                    .cs-header {
-                        color: var(--bodyTextColorWhite);
-                    }
-
-                    .cs-link-content {
-                        color: var(--bodyTextColorWhite);
-                    }
-                }
-            }
-
-            /* Logo Dark Mode */
-            .cs-logo {
-                filter: none;
-                .cs-logo-light { display: none; }
-                .cs-logo-dark { display: block; }
             }
         }
     }
@@ -1753,7 +1685,7 @@
                                 content: "";
                                 opacity: 1;
                                 display: block;
-                                background: var(--primary);
+                                background: var(--secondary);
                                 height: calc(2 / 16 * 1rem);
                                 width: 0%;
                                 transition: width 0.3s;
@@ -1766,12 +1698,12 @@
                             }
                         }
                     }
-                    &:nth-of-type(3) {
-                        margin-top: 0;
+                }
+                &:nth-of-type(3) {
+                    margin-top: 0;
 
-                        li:first-of-type {
-                            margin-bottom: 0;
-                        }
+                    li:first-of-type {
+                        margin-bottom: 0;
                     }
                 }
             }
@@ -1800,6 +1732,9 @@
 
 .cs-logo {
     .cs-logo-dark {
+        display: block;
+    }
+    .cs-logo-light {
         display: none;
     }
 }
@@ -1807,11 +1742,12 @@
 /* Dark Mode */
 body.dark-mode {
     .cs-logo {
-        .cs-logo-light {
-            display: none;
-        }
+        filter: brightness(0) invert(1);
         .cs-logo-dark {
             display: block;
+        }
+        .cs-logo-light {
+            display: none;
         }
     }
 }
@@ -1886,7 +1822,7 @@ body.dark-mode {
                     width: 16px;
                     height: 16px;
                     object-fit: contain;
-                    filter: sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(100%);
+                    filter: brightness(0) invert(1);
                 }
             }
 
@@ -1984,7 +1920,7 @@ body.dark-mode {
             display: block;
 
             &.cs-active {
-                color: var(--primary);
+                color: var(--secondary);
             }
         }
 
@@ -2007,7 +1943,7 @@ body.dark-mode {
                     width: 16px;
                     height: 16px;
                     object-fit: contain;
-                    filter: sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(100%);
+                    filter: brightness(0) invert(1);
                 }
             }
 
@@ -2081,6 +2017,10 @@ body.dark-mode {
                 .cs-contact-link {
                     .cs-wrapper {
                         background-color: var(--secondary);
+                        
+                        .cs-icon {
+                            filter: brightness(0) saturate(100%) invert(11%) sepia(28%) saturate(5674%) hue-rotate(201deg) brightness(95%) contrast(101%);
+                        }
                     }
 
                     .cs-header {
@@ -2089,15 +2029,6 @@ body.dark-mode {
 
                     .cs-link-content {
                         color: var(--bodyTextColorWhite);
-                    }
-                }
-
-                .cs-button-solid {
-                    background-color: var(--secondary);
-                    color: var(--primary);
-
-                    &:hover {
-                        background-color: var(--secondaryLight);
                     }
                 }
             }
@@ -2123,10 +2054,10 @@ body.dark-mode {
 
                 .cs-call {
                     .cs-wrapper {
-                        background-color: var(--primary);
-
+                        background-color: var(--secondary);
+                        
                         .cs-icon {
-                            filter: brightness(0) invert(1);
+                            filter: brightness(0) saturate(100%) invert(11%) sepia(28%) saturate(5674%) hue-rotate(201deg) brightness(95%) contrast(101%);
                         }
                     }
 
@@ -2141,13 +2072,44 @@ body.dark-mode {
             }
 
             .cs-logo {
-                .cs-logo-light {
-                    display: none;
-                }
                 .cs-logo-dark {
                     display: block;
+                }
+                .cs-logo-light {
+                    display: none;
                 }
             }
         }
     }
+}
+
+#cs-navigation {
+    .cs-contact-link .cs-wrapper .cs-icon,
+    .cs-call .cs-wrapper .cs-icon {
+        filter: brightness(0) invert(1);
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #cs-navigation {
+            .cs-contact-link .cs-wrapper,
+            .cs-call .cs-wrapper {
+                background-color: var(--secondary);
+                
+                .cs-icon {
+                    filter: brightness(0) saturate(100%) invert(11%) sepia(28%) saturate(5674%) hue-rotate(201deg) brightness(95%) contrast(101%);
+                }
+            }
+        }
+    }
+}
+
+#footer .right-section .lists ul li a:hover {
+    color: var(--secondary);
+}
+
+#footer .right-section .lists ul li a:before {
+    background: var(--secondary);
 }
