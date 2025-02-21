@@ -478,6 +478,11 @@
   body.dark-mode #RTsbst-1311 .cs-link {
     color: var(--primaryLight);
   }
+  body.dark-mode #RTsbs-1311 .cs-link:before,
+  body.dark-mode #RTsbsr-1311 .cs-link:before,
+  body.dark-mode #RTsbst-1311 .cs-link:before {
+    background: var(--primary);
+  }
   body.dark-mode #RTsbs-1311 .cs-text,
   body.dark-mode #RTsbs-1311 .cs-h3,
   body.dark-mode #RTsbsr-1311 .cs-text,
@@ -509,18 +514,36 @@
   body.dark-mode #RTsbs-1311 .cs-button-solid,
   body.dark-mode #RTsbsr-1311 .cs-button-solid,
   body.dark-mode #RTsbst-1311 .cs-button-solid {
-    color: var(--secondary);
-    background-color: var(--dark);
+    color: var(--bodyTextColorWhite);
+    background-color: var(--secondary);
+    border: 2px solid var(--secondary);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  body.dark-mode #RTsbs-1311 .cs-button-solid:before,
+  body.dark-mode #RTsbsr-1311 .cs-button-solid:before,
+  body.dark-mode #RTsbst-1311 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease;
+    z-index: -1;
   }
   body.dark-mode #RTsbs-1311 .cs-button-solid:hover,
   body.dark-mode #RTsbsr-1311 .cs-button-solid:hover,
   body.dark-mode #RTsbst-1311 .cs-button-solid:hover {
-    color: var(--bodyTextColorWhite);
+    color: var(--secondary);
+    border-color: var(--primary);
   }
   body.dark-mode #RTsbs-1311 .cs-button-solid:hover:before,
   body.dark-mode #RTsbsr-1311 .cs-button-solid:hover:before,
   body.dark-mode #RTsbst-1311 .cs-button-solid:hover:before {
-    background: var(--primary);
+    width: 100%;
   }
   body.dark-mode #RTsbsr-1311 {
     background-color: var(--dark);

@@ -6,9 +6,9 @@
 @media only screen and (min-width: 0rem) {
   :root {
     --primary: #001f3f;
-    --primaryLight: #FFD700;
-    --secondary: #FFD700;
-    --secondaryLight: #FFD700;
+    --primaryLight: #e6c700;
+    --secondary: #e6c700;
+    --secondaryLight: #e6c700;
     --headerColor: #001f3f;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
@@ -22,6 +22,38 @@
     --bodyFontSize: 1rem;
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+  }
+  body {
+    background-color: var(--dark);
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode {
+    display: block;
+    background-color: var(--dark);
+    color: var(--bodyTextColorWhite);
+  }
+  body:not(.dark-mode) {
+    display: block;
+    background-color: #fff;
+    color: var(--bodyTextColor);
+  }
+  .dark {
+    display: block;
+  }
+  .light {
+    display: none;
+  }
+  body.dark-mode .dark {
+    display: block;
+  }
+  body.dark-mode .light {
+    display: none;
+  }
+  body:not(.dark-mode) .dark {
+    display: none;
+  }
+  body:not(.dark-mode) .light {
+    display: block;
   }
   .cs-topper {
     display: block;
@@ -824,11 +856,12 @@
     color: var(--headerColor);
   }
   #cs-navigation .cs-top-bar .cs-button-solid {
-    background-color: var(--primary);
-    color: #fff;
+    background-color: var(--secondary);
+    color: var(--primary);
   }
   #cs-navigation .cs-top-bar .cs-button-solid:hover {
-    background-color: var(--primaryLight);
+    background-color: var(--secondary);
+    color: var(--primary);
   }
   #cs-navigation .cs-bottom-bar {
     background-color: #fff;

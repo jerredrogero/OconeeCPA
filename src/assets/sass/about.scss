@@ -490,6 +490,10 @@
 
             .cs-link {
                 color: var(--primaryLight);
+                
+                &:before {
+                    background: var(--primary);
+                }
             }
 
             .cs-text,
@@ -514,13 +518,31 @@
             }
 
             .cs-button-solid {
-                color: var(--secondary);
-                background-color: var(--dark);
+                color: var(--bodyTextColorWhite);
+                background-color: var(--secondary);
+                border: 2px solid var(--secondary);
+                position: relative;
+                transition: all 0.3s ease;
+                overflow: hidden;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 100%;
+                    background: var(--primary);
+                    transition: width 0.3s ease;
+                    z-index: -1;
+                }
 
                 &:hover {
-                    color: var(--bodyTextColorWhite);
+                    color: var(--secondary);
+                    border-color: var(--primary);
+
                     &:before {
-                        background: var(--primary);
+                        width: 100%;
                     }
                 }
             }

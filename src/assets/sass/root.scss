@@ -9,9 +9,9 @@
     // Website colors
     :root {
         --primary: #001f3f;  // Navy
-        --primaryLight: #FFD700;  // Lighter navy for hover states
-        --secondary: #FFD700;  // Gold
-        --secondaryLight: #FFD700;  // Lighter gold for hover states
+        --primaryLight: #e6c700;  // Lighter navy for hover states
+        --secondary: #e6c700;  // Gold
+        --secondaryLight: #e6c700;  // Lighter gold for hover states
         --headerColor: #001f3f;  // Navy for headers
         --bodyTextColor: #4e4b66;  // Keeping original for body text
         --bodyTextColorWhite: #fafbfc;  // Keeping original white text
@@ -27,6 +27,52 @@
 
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+
+    // Set dark mode by default
+    body {
+        background-color: var(--dark);
+        color: var(--bodyTextColorWhite);
+
+        &.dark-mode {
+            display: block;
+            background-color: var(--dark);
+            color: var(--bodyTextColorWhite);
+        }
+
+        &:not(.dark-mode) {
+            display: block;
+            background-color: #fff;
+            color: var(--bodyTextColor);
+        }
+    }
+
+    // Show dark mode elements by default
+    .dark {
+        display: block;
+    }
+
+    // Hide light mode elements by default
+    .light {
+        display: none;
+    }
+
+    body.dark-mode {
+        .dark {
+            display: block;
+        }
+        .light {
+            display: none;
+        }
+    }
+
+    body:not(.dark-mode) {
+        .dark {
+            display: none;
+        }
+        .light {
+            display: block;
+        }
     }
 
     // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
@@ -1031,11 +1077,12 @@
             }
 
             .cs-button-solid {
-                background-color: var(--primary);
-                color: #fff;
+                background-color: var(--secondary);
+                color: var(--primary);
 
                 &:hover {
-                    background-color: var(--primaryLight);
+                    background-color: var(--secondary);
+                    color: var(--primary);
                 }
             }
         }
