@@ -48,21 +48,15 @@
                         <h2>Contact</h2>
                     </li>
                     <li>
-                        <a href="/contact">
-                            {{ client.address.lineOne }}<br />
-                            {{ client.address.lineTwo }}<br />
-                            {{ client.address.city }}
-                            {{ client.address.state }}
-                            {{ client.address.zip }}
-                        </a>
+                        <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
                     </li>
                     <li>
-                        <a href="tel:{{ client.phoneForTel }}">
-                            T: {{ client.phoneFormatted }}
-                        </a>
+                        <a href="mailto:{{ client.email }}">{{ client.email }}</a>
                     </li>
                     <li>
-                        <a href="mailto:{{ client.email }}">Click to Email</a>
+                        <a href="{{ client.address.mapLink }}">
+                            {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}
+                        </a>
                     </li>
                 </ul>
             </div>

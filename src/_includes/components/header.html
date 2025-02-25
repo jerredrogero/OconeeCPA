@@ -11,7 +11,7 @@
                     class="cs-logo-light"
                     src="/assets/svgs/logo-black.svg"
                     alt="Oconee CPA logo"
-                    width="210"
+                    width="280"
                     height="29"
                     aria-hidden="true"
                     decoding="async"
@@ -20,7 +20,7 @@
                     class="cs-logo-dark"
                     src="/assets/svgs/logo-white.svg"
                     alt="Oconee CPA logo"
-                    width="210"
+                    width="280"
                     height="29"
                     aria-hidden="true"
                     decoding="async"
@@ -34,15 +34,6 @@
                     <div class="cs-info">
                         <span class="cs-header">Send A Message</span>
                         <span class="cs-link-content">{{ client.email }}</span>
-                    </div>
-                </a>
-                <a class="cs-contact-link" href="{{ client.address.mapLink }}">
-                    <picture class="cs-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/yellow-pin.svg" alt="location icon" width="24" height="24">
-                    </picture>
-                    <div class="cs-info">
-                        <span class="cs-header">Visit Us At</span>
-                        <span class="cs-link-content">{{ client.address.city }}, {{ client.address.state }}</span>
                     </div>
                 </a>
                 <a href="/contact" class="cs-button-solid">Contact Us</a>
@@ -81,15 +72,6 @@
                     </ul>
                 </div>
             </nav>
-            <a class="cs-call" href="tel:{{ client.phoneForTel }}">
-                <picture class="cs-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-1a.svg" alt="phone icon" width="24" height="24">
-                </picture>
-                <div class="cs-info">
-                    <span class="cs-header">Call Us Today</span>
-                    <span class="cs-link-content">{{ client.phoneFormatted }}</span>
-                </div>
-            </a>
         </div>
     </div>
 </header>

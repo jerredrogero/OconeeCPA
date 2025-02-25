@@ -10,7 +10,7 @@ module.exports = {
         state: "GA",
         zip: "30677",
         country: "US",
-        mapLink: "https://goo.gl/maps/UAQn4vuGDiwv7DV39",
+        mapLink: "https://maps.app.goo.gl/HQFDphg1ucT3DM8q6",
     },
     socials: {
         facebook: "https://www.facebook.com/",
