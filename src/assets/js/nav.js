@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbarMenu = document.querySelector("#cs-navigation");
     const hamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
     const expandedMenu = document.querySelector("#cs-expanded");
+    const ulWrapper = document.querySelector("#cs-navigation .cs-ul-wrapper");
     
     console.log("Mobile navigation initialization:");
     console.log("- hamburgerMenu found:", !!hamburgerMenu);
     console.log("- expandedMenu found:", !!expandedMenu);
+    console.log("- ulWrapper found:", !!ulWrapper);
     console.log("- expandedMenu current value:", expandedMenu ? expandedMenu.getAttribute("aria-expanded") : "not found");
 
     // Function to toggle the aria-expanded attribute
@@ -34,9 +36,28 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (expandedMenu) {
             toggleAriaExpanded(expandedMenu);
+            // Force the menu to display by adding a style
+            if (expandedMenu.getAttribute("aria-expanded") === "true") {
+                expandedMenu.style.display = "flex";
+            } else {
+                expandedMenu.style.removeProperty("display");
+            }
             console.log("Menu toggled, aria-expanded set to:", expandedMenu.getAttribute("aria-expanded"));
         } else {
             console.log("expandedMenu element not found");
+        }
+        
+        // Also toggle the ul-wrapper visibility
+        if (ulWrapper) {
+            if (navbarMenu.classList.contains("cs-active")) {
+                ulWrapper.style.opacity = "1";
+                ulWrapper.style.visibility = "visible";
+                ulWrapper.style.transform = "scaleX(1)";
+            } else {
+                ulWrapper.style.opacity = "0";
+                ulWrapper.style.visibility = "hidden";
+                ulWrapper.style.transform = "scaleX(0)";
+            }
         }
     }
 

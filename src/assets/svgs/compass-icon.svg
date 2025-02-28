@@ -8,7 +8,7 @@
     <path d="M16 10L17 16L16 22L15 16Z" fill="currentColor"/>
     <!-- Cardinal Points -->
     <text x="16" y="8" text-anchor="middle" fill="currentColor" font-size="4">N</text>
-    <text x="16" y="25" text-anchor="middle" fill="currentColor" font-size="4">S</text>
+    <text x="16" y="27" text-anchor="middle" fill="currentColor" font-size="4">S</text>
     <text x="5.5" y="16.5" text-anchor="middle" fill="currentColor" font-size="4">W</text>
     <text x="26.5" y="16.5" text-anchor="middle" fill="currentColor" font-size="4">E</text>
 </svg> 
