@@ -4,8 +4,8 @@
     <circle cx="16" cy="16" r="14" fill="#d4af37"/>
     <!-- Compass Circle Border -->
     <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
-    <!-- Compass Needle -->
-    <path d="M16 6L18.5 16L16 26L13.5 16Z" fill="currentColor"/>
+    <!-- Compass Needle (smaller) -->
+    <path d="M16 10L17 16L16 22L15 16Z" fill="currentColor"/>
     <!-- Cardinal Points -->
     <text x="16" y="8" text-anchor="middle" fill="currentColor" font-size="4">N</text>
     <text x="16" y="25" text-anchor="middle" fill="currentColor" font-size="4">S</text>

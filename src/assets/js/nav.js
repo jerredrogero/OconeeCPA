@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbarMenu = document.querySelector("#cs-navigation");
     const hamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
     const expandedMenu = document.querySelector("#cs-expanded");
+    
+    console.log("Mobile navigation initialization:");
+    console.log("- hamburgerMenu found:", !!hamburgerMenu);
+    console.log("- expandedMenu found:", !!expandedMenu);
+    console.log("- expandedMenu current value:", expandedMenu ? expandedMenu.getAttribute("aria-expanded") : "not found");
 
     // Function to toggle the aria-expanded attribute
     function toggleAriaExpanded(element) {
@@ -18,18 +23,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to toggle the menu open or closed
     function toggleMenu() {
-        if (!hamburgerMenu || !navbarMenu || !bodyElement || !expandedMenu) return;
+        if (!hamburgerMenu || !navbarMenu || !bodyElement) {
+            console.log("Some elements not found for toggle menu");
+            return;
+        }
         
         hamburgerMenu.classList.toggle("cs-active");
         navbarMenu.classList.toggle("cs-active");
         bodyElement.classList.toggle("cs-open");
-        toggleAriaExpanded(hamburgerMenu);
-        toggleAriaExpanded(expandedMenu);
+        
+        if (expandedMenu) {
+            toggleAriaExpanded(expandedMenu);
+            console.log("Menu toggled, aria-expanded set to:", expandedMenu.getAttribute("aria-expanded"));
+        } else {
+            console.log("expandedMenu element not found");
+        }
     }
 
     // Add click event listener to the hamburger menu
     if (hamburgerMenu) {
-        hamburgerMenu.addEventListener("click", toggleMenu);
+        hamburgerMenu.addEventListener("click", function(e) {
+            e.preventDefault();
+            console.log("Hamburger menu clicked");
+            toggleMenu();
+        });
     }
 
     // Add click event listener to the navbar menu to handle clicks on the pseudo-element

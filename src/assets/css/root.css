@@ -1706,3 +1706,14 @@ body.dark-mode .cs-logo .cs-logo-light {
 }
 
 /*# sourceMappingURL=root.css.map */
+
+#cs-navigation .cs-ul[aria-expanded=true] {
+  display: flex;
+}
+/* Add this rule to ensure menu items are visible when active */
+#cs-navigation.cs-active .cs-ul {
+  display: flex !important;
+}
+#cs-navigation .cs-li {
+  // ... existing code ...
+}
