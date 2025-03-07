@@ -521,16 +521,14 @@
     backdrop-filter: blur(10px);
   }
   #cs-navigation.cs-active .cs-ul-wrapper {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: scaleX(1) !important;
-  }
-  #cs-navigation.cs-active .cs-ul {
-    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+    transform: scaleX(1);
+    transition-delay: 0.2s;
   }
   #cs-navigation.cs-active .cs-li {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
+    opacity: 1;
+    transform: translateX(0);
   }
   #cs-navigation.cs-active:before {
     opacity: 1;
@@ -903,10 +901,6 @@
     height: 16px;
     object-fit: contain;
     filter: brightness(0) invert(1);
-  }
-  #cs-navigation .cs-contact-link .cs-info {
-    display: flex;
-    flex-direction: column;
   }
   #cs-navigation .cs-contact-link .cs-info {
     display: flex;
@@ -1712,22 +1706,3 @@ body.dark-mode .cs-logo .cs-logo-light {
 }
 
 /*# sourceMappingURL=root.css.map */
-
-#cs-navigation .cs-ul[aria-expanded=true] {
-  display: flex;
-}
-/* Add this rule to ensure menu items are visible when active */
-#cs-navigation.cs-active .cs-ul {
-  display: flex !important;
-}
-#cs-navigation .cs-li {
-  /* existing li styles preserved */
-}
-
-/* Ensure mobile menu links are visible when active */
-@media only screen and (max-width: 63.9375rem) {
-  body.cs-open #cs-navigation .cs-ul {
-    display: flex !important;
-    visibility: visible !important;
-  }
-}
