@@ -59,16 +59,32 @@
                     </div>
                 </button>
                 <div class="cs-ul-wrapper">
-                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                    <ul class="cs-ul" aria-expanded="false">
                         {% set navPages = collections.all | eleventyNavigation %}
-                        {# Loop through all pages with eleventyNavigation in the frontmatter #}
-                        {% for entry in navPages %}
+                        {% if navPages.length > 0 %}
+                            {% for entry in navPages %}
                             <li class="cs-li">
-                                <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %}cs-active{% endif %}">
-                                    {{ entry.key }}
-                                </a>
+                                <a href="{{ entry.url | url }}" class="cs-li-link {% if entry.url == page.url %}cs-active{% endif %}">{{ entry.title }}</a>
                             </li>
-                        {% endfor %}
+                            {%- endfor -%}
+                        {% else %}
+                            <!-- Fallback navigation if eleventy navigation fails -->
+                            <li class="cs-li">
+                                <a href="/" class="cs-li-link {% if '/' == page.url %}cs-active{% endif %}">Home</a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="/about/" class="cs-li-link {% if '/about/' == page.url %}cs-active{% endif %}">About Us</a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="/services/" class="cs-li-link {% if '/services/' == page.url %}cs-active{% endif %}">Services</a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="/contact/" class="cs-li-link {% if '/contact/' == page.url %}cs-active{% endif %}">Contact</a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="/blog/" class="cs-li-link {% if '/blog/' == page.url %}cs-active{% endif %}">Blog</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>

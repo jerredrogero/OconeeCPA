@@ -4,28 +4,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const bodyElement = document.querySelector("body");
     const navbarMenu = document.querySelector("#cs-navigation");
     const hamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
-    const expandedMenu = document.querySelector("#cs-expanded");
-    const ulWrapper = document.querySelector("#cs-navigation .cs-ul-wrapper");
+    const navList = document.querySelector("#cs-navigation .cs-ul");
     
-    console.log("Mobile navigation initialization:");
-    console.log("- hamburgerMenu found:", !!hamburgerMenu);
-    console.log("- expandedMenu found:", !!expandedMenu);
-    console.log("- ulWrapper found:", !!ulWrapper);
-    console.log("- expandedMenu current value:", expandedMenu ? expandedMenu.getAttribute("aria-expanded") : "not found");
-
-    // Function to toggle the aria-expanded attribute
-    function toggleAriaExpanded(element) {
-        if (!element) return;
-        const isExpanded = element.getAttribute("aria-expanded");
-        element.setAttribute(
-            "aria-expanded",
-            isExpanded === "false" ? "true" : "false",
-        );
-    }
-
+    console.log("Mobile navigation initialization");
+    
+    // Debug: Check if navigation items exist
+    const navItems = document.querySelectorAll("#cs-navigation .cs-li");
+    console.log("Navigation items found:", navItems.length);
+    navItems.forEach((item, index) => {
+        console.log(`Nav item ${index}:`, item.textContent.trim());
+    });
+    
     // Function to toggle the menu open or closed
     function toggleMenu() {
-        if (!hamburgerMenu || !navbarMenu || !bodyElement) {
+        if (!hamburgerMenu || !navbarMenu || !bodyElement || !navList) {
             console.log("Some elements not found for toggle menu");
             return;
         }
@@ -34,33 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
         navbarMenu.classList.toggle("cs-active");
         bodyElement.classList.toggle("cs-open");
         
-        if (expandedMenu) {
-            toggleAriaExpanded(expandedMenu);
-            // Force the menu to display by adding a style
-            if (expandedMenu.getAttribute("aria-expanded") === "true") {
-                expandedMenu.style.display = "flex";
-            } else {
-                expandedMenu.style.removeProperty("display");
-            }
-            console.log("Menu toggled, aria-expanded set to:", expandedMenu.getAttribute("aria-expanded"));
-        } else {
-            console.log("expandedMenu element not found");
-        }
+        // Toggle the aria-expanded attribute
+        const isExpanded = navList.getAttribute("aria-expanded") === "true";
+        navList.setAttribute("aria-expanded", isExpanded ? "false" : "true");
         
-        // Also toggle the ul-wrapper visibility
-        if (ulWrapper) {
-            if (navbarMenu.classList.contains("cs-active")) {
-                ulWrapper.style.opacity = "1";
-                ulWrapper.style.visibility = "visible";
-                ulWrapper.style.transform = "scaleX(1)";
-            } else {
-                ulWrapper.style.opacity = "0";
-                ulWrapper.style.visibility = "hidden";
-                ulWrapper.style.transform = "scaleX(0)";
-            }
-        }
+        console.log("Menu toggled, aria-expanded set to:", navList.getAttribute("aria-expanded"));
     }
-
+    
     // Add click event listener to the hamburger menu
     if (hamburgerMenu) {
         hamburgerMenu.addEventListener("click", function(e) {
@@ -88,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function() {
         element.classList.toggle("cs-active");
         const dropdownButton = element.querySelector(".cs-dropdown-button");
         if (dropdownButton) {
-            toggleAriaExpanded(dropdownButton);
+            const isExpanded = dropdownButton.getAttribute("aria-expanded") === "true";
+            dropdownButton.setAttribute("aria-expanded", isExpanded ? "false" : "true");
         }
     }
 

@@ -399,7 +399,7 @@
     transition: bottom 0.3s, opacity 0.3s;
   }
   #cs-navigation .cs-ul-wrapper {
-    z-index: -1;
+    z-index: 10;
     position: absolute;
     top: 100%;
     left: auto;
@@ -426,6 +426,9 @@
     overflow: scroll;
     padding: 3rem clamp(1.75rem, 3vw, 2.5rem) 2rem 4.375rem;
     gap: 1.25rem;
+  }
+  #cs-navigation .cs-ul[aria-expanded=true] {
+    display: flex;
   }
   #cs-navigation .cs-li {
     opacity: 0;
@@ -470,7 +473,7 @@
     text-decoration: none;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     line-height: 1.2em;
-    color: var(--bodyTextColorWhite);
+    color: var(--primary);
   }
   #cs-navigation .cs-li-link:before {
     position: absolute;
@@ -506,7 +509,7 @@
     box-shadow: none;
   }
   #cs-navigation:before {
-    z-index: -11;
+    z-index: -1;
     position: absolute;
     top: 100%;
     right: 0;
@@ -526,9 +529,14 @@
     transform: scaleX(1);
     transition-delay: 0.2s;
   }
+  #cs-navigation.cs-active .cs-ul {
+    opacity: 1;
+    visibility: visible;
+  }
   #cs-navigation.cs-active .cs-li {
     opacity: 1;
     transform: translateX(0);
+    visibility: visible;
   }
   #cs-navigation.cs-active:before {
     opacity: 1;
@@ -1546,7 +1554,7 @@ body.dark-mode .cs-logo .cs-logo-light {
     text-decoration: none;
     font-size: 1.125rem;
     line-height: 1.2em;
-    color: var(--headerColor);
+    color: var(--primary);
     display: block;
   }
   #cs-navigation .cs-li-link.cs-active {

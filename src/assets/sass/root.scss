@@ -512,7 +512,7 @@
         }
 
         .cs-ul-wrapper {
-            z-index: -1;
+            z-index: 10;
             position: absolute;
             top: 100%;
             left: auto;
@@ -543,6 +543,10 @@
             padding: calc(48 / 16 * 1rem) clamp(1.75rem, 3vw, 2.5rem)
                 calc(32 / 16 * 1rem) calc(70 / 16 * 1rem);
             gap: calc(20 / 16 * 1rem);
+
+            &[aria-expanded="true"] {
+                display: flex;
+            }
         }
 
         .cs-li {
@@ -592,7 +596,7 @@
             text-decoration: none;
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             line-height: 1.2em;
-            color: var(--bodyTextColorWhite);
+            color: var(--primary);
 
             &:before {
                 position: absolute;
@@ -635,7 +639,7 @@
         }
 
         &:before {
-            z-index: -11;
+            z-index: -1;
             position: absolute;
             top: 100%;
             right: 0;
@@ -660,10 +664,17 @@
                 transition-delay: 0.2s;
             }
 
+            .cs-ul {
+                opacity: 1;
+                visibility: visible;
+            }
+
             .cs-li {
                 opacity: 1;
                 transform: translateX(0);
+                visibility: visible;
             }
+            
             &:before {
                 opacity: 1;
                 width: 100%;
@@ -1874,7 +1885,7 @@ body.dark-mode {
             text-decoration: none;
             font-size: 1.125rem;
             line-height: 1.2em;
-            color: var(--headerColor);
+            color: var(--primary);
             display: block;
 
             &.cs-active {
