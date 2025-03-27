@@ -25,13 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
         mobileLinks.style.padding = '120px 2rem 2rem 4rem';
         mobileLinks.style.gap = '1.5rem';
         
-        // Create links
+        // Create links - removed Projects and Reviews
         const links = [
             { text: 'Home', url: '/' },
             { text: 'About Us', url: '/about/' },
             { text: 'Services', url: '/services/' },
-            { text: 'Projects', url: '/projects/' },
-            { text: 'Reviews', url: '/reviews/' },
             { text: 'Contact Us', url: '/contact/' }
         ];
         

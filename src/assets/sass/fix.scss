@@ -20,15 +20,6 @@
     transition: transform 0.3s ease, opacity 0.3s ease !important;
   }
 
-  /* X button when menu is active */
-  #cs-navigation.cs-active .cs-toggle {
-    position: fixed !important;
-    top: 1.5rem !important;
-    right: 1.5rem !important;
-    background: transparent !important;
-    z-index: 10001 !important;
-  }
-
   /* Change hamburger to X when active - fixed transform values */
   #cs-navigation.cs-active .cs-toggle .cs-box .cs-line1 {
     transform: rotate(45deg) translate(3px, 6px) !important;
@@ -46,7 +37,7 @@
   #dark-mode-toggle {
     position: absolute !important;
     top: 1.5rem !important; 
-    right: 5rem !important;
+    right: 3rem !important;
     z-index: 100000 !important;
   }
 
