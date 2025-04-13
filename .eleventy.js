@@ -2,6 +2,7 @@
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+const Image = require("@11ty/eleventy-img");
 
 // Configs
 const configCss = require("./src/config/css");
@@ -63,6 +64,66 @@ module.exports = function (eleventyConfig) {
     if (isProduction) {
         eleventyConfig.addPlugin(pluginMinifier);
     }
+
+    /**
+     * IMAGE OPTIMIZATION
+     * Shortcode for optimizing images - converts to WebP and other formats
+     */
+    eleventyConfig.addAsyncShortcode("image", async function(src, alt, sizes = "100vw") {
+        if (!src) {
+            throw new Error(`Missing image source`);
+        }
+
+        if (!alt) {
+            throw new Error(`Missing alt text for image: ${src}`);
+        }
+
+        let metadata = await Image(src, {
+            widths: [300, 600, 900, 1200],
+            formats: ["avif", "webp", "jpeg"],
+            outputDir: "./public/img/",
+            urlPath: "/img/"
+        });
+
+        let imageAttributes = {
+            alt,
+            sizes,
+            loading: "lazy",
+            decoding: "async"
+        };
+
+        return Image.generateHTML(metadata, imageAttributes);
+    });
+
+    /**
+     * RESPONSIVE IMAGE OPTIMIZATION
+     * Shortcode for creating responsive images with custom sizes
+     */
+    eleventyConfig.addAsyncShortcode("responsive", async function(src, alt, sizes = "(min-width: 1024px) 100vw, 50vw", widths = [300, 600, 900, 1200]) {
+        if (!src) {
+            throw new Error(`Missing image source`);
+        }
+
+        if (!alt) {
+            throw new Error(`Missing alt text for image: ${src}`);
+        }
+
+        let metadata = await Image(src, {
+            widths: widths,
+            formats: ["avif", "webp", "jpeg"],
+            outputDir: "./public/img/",
+            urlPath: "/img/"
+        });
+
+        let imageAttributes = {
+            alt,
+            sizes,
+            loading: "lazy",
+            decoding: "async"
+        };
+
+        return Image.generateHTML(metadata, imageAttributes);
+    });
     /**=====================================================================
                                 END PLUGINS
     =======================================================================*/
@@ -77,6 +138,7 @@ module.exports = function (eleventyConfig) {
     });
     eleventyConfig.addPassthroughCopy("./src/admin");
     eleventyConfig.addPassthroughCopy("./src/_redirects");
+    eleventyConfig.addPassthroughCopy("./src/_headers");
     /**=====================================================================
                               END PASSTHROUGHS
     =======================================================================*/

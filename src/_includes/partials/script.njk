@@ -1,0 +1,8 @@
+{% if eleventy.env.ELEVENTY_ENV == "PROD" %}
+  <!-- Modern browsers -->
+  <script type="module" src="/assets/js/{{ name }}.modern.js"></script>
+  <!-- Legacy browsers -->
+  <script nomodule src="/assets/js/{{ name }}.legacy.js"></script>
+{% else %}
+  <script src="/assets/js/{{ name }}.js"></script>
+{% endif %} 
