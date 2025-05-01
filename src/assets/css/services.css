@@ -34,6 +34,7 @@
     padding-right: 0;
     padding-left: 0;
     position: relative;
+    /* Additional selector to override inline styles */
   }
   #services-1338 .cs-container {
     width: 100%;
@@ -144,21 +145,39 @@
     line-height: 1.2;
   }
   #services-1338 .cs-item-text {
-    color: white;
+    color: white !important;
     margin: 0;
     font-size: 1rem;
     line-height: 1.5;
     /* Add proper spacing between bullet points */
+    /* Target inline styled elements */
   }
   #services-1338 .cs-item-text ul {
     padding-left: 0;
     margin: 0;
+    color: white !important;
   }
   #services-1338 .cs-item-text li {
     margin-bottom: 1rem;
+    color: white !important;
+  }
+  #services-1338 .cs-item-text li span {
+    color: white !important;
   }
   #services-1338 .cs-item-text li:last-child {
     margin-bottom: 0;
+  }
+  #services-1338 .cs-item-text ul[style] {
+    color: white !important;
+  }
+  #services-1338 .cs-item-text li[style] {
+    color: white !important;
+  }
+  #services-1338 .cs-item-text li[style] span {
+    color: white !important;
+  }
+  #services-1338 li.cs-item .cs-info ul li span {
+    color: white !important;
   }
   #services-1338 .cs-number {
     display: none;
@@ -236,6 +255,18 @@
   body.dark-mode #services-cta .cs-button-solid:hover {
     background-color: var(--dark);
   }
+}
+/* Force White Text in Service Cards - Override any other styles */
+#services-1338 .cs-item .cs-info .cs-item-text,
+#services-1338 .cs-item .cs-info .cs-item-text ul,
+#services-1338 .cs-item .cs-info .cs-item-text li,
+#services-1338 .cs-item .cs-info .cs-item-text li span,
+#services-1338 .cs-item .cs-info .cs-h3,
+#services-1338 .cs-item .cs-info p,
+#services-1338 .cs-item .cs-info ul,
+#services-1338 .cs-item .cs-info li,
+#services-1338 .cs-item .cs-info span {
+  color: white !important;
 }
 
 /*# sourceMappingURL=services.css.map */

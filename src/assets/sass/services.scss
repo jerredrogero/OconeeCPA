@@ -163,7 +163,7 @@
         }
 
         .cs-item-text {
-            color: white;
+            color: white !important;
             margin: 0;
             font-size: 1rem;
             line-height: 1.5;
@@ -171,16 +171,40 @@
             ul {
                 padding-left: 0;
                 margin: 0;
+                color: white !important;
             }
 
             li {
                 margin-bottom: 1rem;
+                color: white !important;
+                
+                span {
+                    color: white !important;
+                }
             }
 
             /* Add proper spacing between bullet points */
             li:last-child {
                 margin-bottom: 0;
             }
+            
+            /* Target inline styled elements */
+            ul[style] {
+                color: white !important;
+            }
+            
+            li[style] {
+                color: white !important;
+                
+                span {
+                    color: white !important;
+                }
+            }
+        }
+        
+        /* Additional selector to override inline styles */
+        li.cs-item .cs-info ul li span {
+            color: white !important;
         }
 
         .cs-number {
@@ -283,4 +307,17 @@
             }
         }
     }
+}
+
+/* Force White Text in Service Cards - Override any other styles */
+#services-1338 .cs-item .cs-info .cs-item-text,
+#services-1338 .cs-item .cs-info .cs-item-text ul,
+#services-1338 .cs-item .cs-info .cs-item-text li,
+#services-1338 .cs-item .cs-info .cs-item-text li span,
+#services-1338 .cs-item .cs-info .cs-h3,
+#services-1338 .cs-item .cs-info p,
+#services-1338 .cs-item .cs-info ul,
+#services-1338 .cs-item .cs-info li,
+#services-1338 .cs-item .cs-info span {
+    color: white !important;
 } 
