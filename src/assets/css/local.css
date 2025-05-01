@@ -667,6 +667,7 @@
   body.dark-mode #certifications {
     background-color: var(--dark);
   }
+  body.dark-mode #certifications .cs-topper,
   body.dark-mode #certifications .cs-title,
   body.dark-mode #certifications .cs-text {
     color: var(--bodyTextColorWhite);
